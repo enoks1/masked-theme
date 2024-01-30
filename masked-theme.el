@@ -1,8 +1,8 @@
 ;;; masked-theme.el --- Masked color theme for GNU Emacs.
 
-;; Copyright (C) 2024 oeshak <https://github.com/oeshak>
+;; Copyright (C) 2024 Muhammed Enes Kaya <enesskaya61@gmail.com>
 
-;; Author: oeshak <>
+;; Author: Muhammed Enes Kaya <enesskaya61@gmail.com>
 ;; URL: https://github.com/oeshak/masked-theme
 ;; Version: 0.1
 
@@ -26,15 +26,20 @@
 ;; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;; SOFTWARE.
 
+;; TODO: magit, isearch, icomplete
+
 (deftheme masked ()
           "Masked theme for GNU Emacs")
 
 ;; colors with `+c' are lighter; and with `-c' darker
 (let ((masked-bg+2        "#2f2f4d")
       (masked-bg+1        "#222238")
-      (masked-bg+05       "#0f0f10")
-      (masked-bg+00       "#0a0a10")
+      (masked-bg+01       "#0f0f10")
+      (masked-bg+00       "#121212")
       (masked-bg          "#000010")
+      (masked-bg-alt      "#0e0e0e")
+
+      (masked-ws          "#121212")
 
       (masked-red         "#a34443")
       (masked-green       "#8ba446")
@@ -45,21 +50,26 @@
 
       (masked-fg          "#bbbbbb")
       (masked-fg-1        "#969696")
+      (masked-fg-2        "#696969")
 
       (masked-blue-alt    "#004daa")
       (masked-magenta-alt "#c617e6")
 
       (masked-gold        "#ffd700")
       (masked-black       "#000000")
-      (masked-white       "#ffffff"))
+      (masked-white       "#ffffff")
+
+      ;; disable bold/italic (if you want) ['bold <-> 'normal v 'italic <-> 'normal]
+      (bold               'bold)
+      (italic             'italic))
 
   (custom-theme-set-faces
    'masked
 
    ;; general
    `(cursor ((t (:background ,masked-gold))))
-   `(default ((t ,(list :foreground masked-fg :background masked-bg))))
-   `(fringe ((t ,(list :foreground masked-fg :background masked-bg+00))))
+   `(default ((t (:foreground ,masked-fg :background ,masked-bg))))
+   `(fringe ((t (:foreground ,masked-fg :background ,masked-bg+00))))
    `(minibuffer-prompt ((t (:foreground ,masked-white))))
    `(region ((t (:foreground ,masked-white :background ,masked-blue-alt))))
    `(link ((t (:foreground ,masked-magenta-alt :underline t))))
@@ -67,12 +77,12 @@
 
    ;; font-lock
    `(font-lock-builtin-face ((t (:foreground ,masked-green))))
-   `(font-lock-comment-face ((t (:foreground ,masked-blue :slant italic))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,masked-blue :slant italic))))
+   `(font-lock-comment-face ((t (:foreground ,masked-blue :slant ,italic))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,masked-blue :slant ,italic))))
    `(font-lock-constant-face ((t (:foreground ,masked-cyan))))
    `(font-lock-doc-face ((t (:foreground ,masked-green))))
    `(font-lock-function-name-face ((t (:foreground ,masked-fg))))
-   `(font-lock-keyword-face ((t (:foreground ,masked-yellow :weight bold))))
+   `(font-lock-keyword-face ((t (:foreground ,masked-yellow :weight ,bold))))
    `(font-lock-preprocessor-face ((t (:foreground ,masked-magenta))))
    `(font-lock-string-face ((t (:foreground ,masked-red))))
    `(font-lock-type-face ((t (:foreground ,masked-magenta))))
@@ -81,16 +91,17 @@
    `(font-lock-negation-char-face ((t (:foreground ,masked-red))))
 
    ;; mode-line
-   `(mode-line ((t ,(list :foreground masked-black :background masked-yellow))))
-   `(mode-line-inactive ((t ,(list :foreground masked-fg-1 :background masked-bg+05))))
+   `(mode-line-active ((t (:foreground ,masked-black :background ,masked-yellow :slant ,italic))))
+   `(mode-line-inactive ((t (:foreground ,masked-fg-1 :background ,masked-bg+01 :slant ,italic))))
+   `(mode-line-buffer-id ((t (:slant ,italic))))
 
    ;; line-numbers
-   `(line-number ((t (:inherit default :foreground ,masked-bg+1 :background ,masked-bg+05))))
-   `(line-number-current-line ((t (:inherit line-number :foreground ,masked-bg+2 :background ,masked-bg+05 :bold t))))
+   `(line-number ((t (:inherit default :foreground ,masked-bg+1 :background ,masked-bg-alt))))
+   `(line-number-current-line ((t (:inherit line-number :foreground ,masked-bg+2 :background ,masked-bg-alt :weight ,bold))))
 
    ;; whitespace
-   `(whitespace-space ((t (:foreground ,masked-bg+05 :background ,masked-bg ))))
-   `(whitespace-tab ((t (:foreground ,masked-bg+05 :background ,masked-bg ))))
+   `(whitespace-space ((t (:foreground ,masked-ws :background ,masked-bg ))))
+   `(whitespace-tab ((t (:foreground ,masked-ws :background ,masked-bg ))))
 
    ;; org
    `(org-date ((t (:foreground ,masked-blue :background ,masked-bg))))
@@ -105,11 +116,34 @@
    `(org-level-5 ((t (:foreground ,masked-magenta :background ,masked-bg))))
 
    ;; compilation
-   `(compilation-info ((t ,(list :foreground masked-green :inherit 'unspecified))))
-   `(compilation-warning ((t ,(list :foreground masked-yellow :inherit 'unspecified))))
-   `(compilation-error ((t (:foreground ,masked-red :inherit 'unspecified))))
-   `(compilation-mode-line-fail ((t ,(list :foreground masked-red :weight 'bold :inherit 'unspecified))))
-   `(compilation-mode-line-exit ((t ,(list :foreground masked-green :weight 'bold :inherit 'unspecified))))
+   `(compilation-info ((t (:foreground ,masked-green))))
+   `(compilation-warning ((t (:foreground ,masked-yellow))))
+   `(compilation-error ((t (:foreground ,masked-red))))
+   `(compilation-mode-line-fail ((t (:foreground ,masked-red :weight ,bold))))
+   `(compilation-mode-line-exit ((t (:foreground ,masked-green :weight ,bold))))
+
+   ;; ansi-term / vterm
+   `(term-color-black ((t (:foreground ,masked-black :background ,masked-black))))
+   `(term-color-red ((t (:foreground ,masked-red :background ,masked-red))))
+   `(term-color-green ((t (:foreground ,masked-green :background ,masked-green))))
+   `(term-color-blue ((t (:foreground ,masked-blue :background ,masked-blue))))
+   `(term-color-yellow ((t (:foreground ,masked-yellow :background ,masked-yellow))))
+   `(term-color-magenta ((t (:foreground ,masked-magenta :background ,masked-magenta))))
+   `(term-color-cyan ((t (:foreground ,masked-cyan :background ,masked-cyan))))
+   `(term-color-white ((t (:foreground ,masked-fg :background ,masked-fg))))
+
+   ;; dired
+   `(dired-directory ((t (:foreground ,masked-blue :weight ,bold))))
+   `(dired-ignored ((t (:foreground ,masked-cyan))))
+
+   ;; powerline
+   `(powerline-active0 ((t (:foreground ,masked-white  :background ,masked-bg+1))))
+   `(powerline-active1 ((t (:foreground ,masked-white :background ,masked-bg-alt))))
+   `(powerline-active2 ((t (:foreground ,masked-white :background ,masked-bg-alt))))
+
+   `(powerline-inactive0 ((t (:foreground ,masked-fg-1  :background ,masked-bg-alt))))
+   `(powerline-inactive1 ((t (:foreground ,masked-fg-1 :background ,masked-bg-alt))))
+   `(powerline-inactive2 ((t (:foreground ,masked-fg-1 :background ,masked-bg-alt))))
 
    ;; highlight-numbers
    `(highlight-numbers-number ((t (:foreground ,masked-red))))))
