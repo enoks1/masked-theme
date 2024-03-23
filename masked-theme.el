@@ -1,10 +1,10 @@
 ;;; masked-theme.el --- Masked color theme for GNU Emacs.
 
-;; Copyright (C) 2024 M.E. Kaya
+;; Copyright (C) 2024 M. Enes Kaya
 
-;; Author: M.E. Kaya
-;; E-mail: enesskaya61@gmail.com
-;; URL: https://github.com/oeshak/masked-theme
+;; Author: M. Enes Kaya
+;; E-mail: enoks@tutanota.com
+;; URL: https://github.com/enoks1/masked-theme
 ;; Version: 0.1
 
 ;; Permission is hereby granted, free of charge, to any person
@@ -30,40 +30,40 @@
 ;; TODO: magit, isearch, icomplete
 
 (deftheme masked ()
-		  "Masked theme for GNU Emacs")
+          "Masked theme for GNU Emacs")
 
 ;; colors with `+c' are lighter; and with `-c' darker
 (let ((masked-bg+3        "#41417b")
-	  (masked-bg+2        "#2f2f4d")
-	  (masked-bg+1        "#222238")
-	  (masked-bg+01       "#0f0f10")
-	  (masked-bg+00       "#121212")
-	  (masked-bg          "#000010")
-	  (masked-bg-alt      "#0e0e0e")
+      (masked-bg+2        "#2f2f4d")
+      (masked-bg+1        "#222238")
+      (masked-bg+01       "#0f0f10")
+      (masked-bg+00       "#121212")
+      (masked-bg          "#000010")
+      (masked-bg-alt      "#0e0e0e")
 
-	  (masked-ws          "#121212")
+      (masked-ws          "#121212")
 
-	  (masked-red         "#a34443")
-	  (masked-green       "#8ba446")
-	  (masked-yellow      "#987d3e")
-	  (masked-blue        "#496f94")
-	  (masked-magenta     "#897399")
-	  (masked-cyan        "#518a8a")
+      (masked-red         "#a34443")
+      (masked-green       "#8ba446")
+      (masked-yellow      "#987d3e")
+      (masked-blue        "#496f94")
+      (masked-magenta     "#897399")
+      (masked-cyan        "#518a8a")
 
-	  (masked-fg          "#bbbbbb")
-	  (masked-fg-1        "#969696")
-	  (masked-fg-2        "#696969")
+      (masked-fg          "#bbbbbb")
+      (masked-fg-1        "#969696")
+      (masked-fg-2        "#696969")
 
-	  (masked-blue-alt    "#004daa")
-	  (masked-magenta-alt "#c617e6")
+      (masked-blue-alt    "#004daa")
+      (masked-magenta-alt "#c617e6")
 
-	  (masked-gold        "#ffd700")
-	  (masked-black       "#000000")
-	  (masked-white       "#ffffff")
+      (masked-gold        "#ffd700")
+      (masked-black       "#000000")
+      (masked-white       "#ffffff")
 
-	  ;; disable bold/italic change them to 'normal'
-	  (bold               'bold)
-	  (italic             'italic))
+      ;; disable bold/italic change them to 'normal'
+      (bold               'bold)
+      (italic             'italic))
 
   (custom-theme-set-faces
    'masked
@@ -119,7 +119,7 @@
    ;; line-numbers
    `(line-number ((t (:inherit default :foreground ,masked-bg+1 :background ,masked-bg-alt))))
    `(line-number-current-line ((t (:inherit line-number :foreground ,masked-bg+2 :background ,masked-bg-alt
-											:weight ,bold))))
+                                            :weight ,bold))))
 
    ;; mode-line
    `(mode-line-active ((t (:foreground ,masked-black :background ,masked-yellow :slant ,italic))))
@@ -155,7 +155,7 @@
 ;;;###autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
-			   (file-name-as-directory (file-name-directory load-file-name))))
+               (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'masked)
 
