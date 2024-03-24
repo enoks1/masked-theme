@@ -2,7 +2,7 @@
 Masked color theme for GNU Emacs.
 
 # Screenshots
-Please note that `highlight-numbers-mode` and `whitespace-mode` are enabled.
+Please note that `highlight-numbers-mode`, `whitespace-mode` and `powerline-default-theme` are enabled.
 
 **Font**: *Hack-12*
 
