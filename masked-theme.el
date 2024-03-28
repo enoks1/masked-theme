@@ -50,7 +50,7 @@
       (masked-magenta     "#897399")
       (masked-cyan        "#518a8a")
 
-      (masked-fg          "#bbbbbb")
+      (masked-fg          "#aaaaaa")
       (masked-fg-1        "#969696")
       (masked-fg-2        "#696969")
 
