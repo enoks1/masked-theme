@@ -5,13 +5,13 @@ Masked color theme for GNU Emacs.
 
 **Font**: *Iosevka-16.5*
 
+With `whitespace-mode` and `highlight-numbers-mode` enabled:
 ![Alt text](/screenshot.png "Screenshot")
 
-:Please note that `highlight-numbers-mode` and `whitespace-mode` are enabled.<br><br>
+<br><br>
 
+With `powerline-default-theme` enabled:
 ![Alt text](/screenshot.png "Screenshot")
-
-:With `powerline-default-theme` enabled.
 
 # Installation
 Download the `masked.el` to a desired location and load it with the following code in `init.el`:
