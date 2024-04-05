@@ -9,6 +9,7 @@ Masked color theme for GNU Emacs.
 
 :Please note that `highlight-numbers-mode` and `whitespace-mode` are enabled.
 
+
 ![Alt text](/screenshot.png "Screenshot")
 
 :With `powerline-default-theme` enabled.
