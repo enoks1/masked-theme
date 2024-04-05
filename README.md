@@ -10,8 +10,10 @@ With `whitespace-mode` and `highlight-numbers-mode` enabled:
 
 <br>
 
+**Font**: *Hack-12*
+
 With `powerline-default-theme` enabled:
-![Alt text](/screenshot.png "Screenshot")
+![Alt text](/screenshot2.png "Screenshot")
 
 # Installation
 Download the `masked.el` to a desired location and load it with the following code in `init.el`:
