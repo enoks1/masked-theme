@@ -12,7 +12,7 @@ With `whitespace-mode` and `highlight-numbers-mode` enabled:
 
 **Font**: *Hack-12*
 
-With `powerline-default-theme` enabled:
+Plus `powerline-default-theme`:
 ![Alt text](/screenshot2.png "Screenshot")
 
 # Installation
