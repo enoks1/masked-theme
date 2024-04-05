@@ -7,8 +7,7 @@ Masked color theme for GNU Emacs.
 
 ![Alt text](/screenshot.png "Screenshot")
 
-:Please note that `highlight-numbers-mode` and `whitespace-mode` are enabled.
-
+:Please note that `highlight-numbers-mode` and `whitespace-mode` are enabled.<br><br>
 
 ![Alt text](/screenshot.png "Screenshot")
 
