@@ -27,7 +27,7 @@
 ;; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;; SOFTWARE.
 
-;; TODO: magit, isearch, icomplete
+;; TODO: magit, isearch, icomplete, company
 
 (deftheme masked ()
           "Masked theme for GNU Emacs")
