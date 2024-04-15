@@ -30,36 +30,36 @@
 ;; TODO: magit, isearch, icomplete, company
 
 (deftheme masked ()
-          "Masked theme for GNU Emacs")
+  "Masked theme for GNU Emacs")
 
 ;; colors with `+c' are lighter; and with `-c' darker
-(let ((masked-bg+3        "#41417b")
-      (masked-bg+2        "#2f2f4d")
-      (masked-bg+1        "#222238")
-      (masked-bg+01       "#0f0f10")
-      (masked-bg+00       "#121212")
-      (masked-bg          "#000010")
-      (masked-bg-alt      "#0e0e0e")
+(let ((masked-bg+3         "#41417b")
+      (masked-bg+2         "#2f2f4d")
+      (masked-bg+1         "#222238")
+      (masked-dim-black    "#0f0f10")
+      (masked-dim-black+1  "#121212")
+      (masked-bg           "#000010")
+      (masked-bg-alt       "#0e0e0e")
 
-      (masked-ws          "#121212")
+      (masked-ws           "#121212")
 
-      (masked-red         "#a34443")
-      (masked-green       "#8ba446")
-      (masked-yellow      "#987d3e")
-      (masked-blue        "#496f94")
-      (masked-magenta     "#897399")
-      (masked-cyan        "#518a8a")
+      (masked-red          "#a34443")
+      (masked-green        "#8ba446")
+      (masked-yellow       "#987d3e")
+      (masked-blue         "#496f94")
+      (masked-magenta      "#897399")
+      (masked-cyan         "#518a8a")
 
-      (masked-fg          "#999999")
-      (masked-fg-1        "#969696")
-      (masked-fg-2        "#696969")
+      (masked-fg           "#999999")
+      (masked-fg-1         "#969696")
+      (masked-fg-2         "#696969")
 
-      (masked-blue-alt    "#004daa")
-      (masked-magenta-alt "#c617e6")
+      (masked-blue-alt     "#004daa")
+      (masked-magenta-alt  "#c617e6")
 
-      (masked-gold        "#ffd700")
-      (masked-black       "#000000")
-      (masked-white       "#ffffff")
+      (masked-gold         "#ffd700")
+      (masked-black        "#000000")
+      (masked-white        "#ffffff")
 
       ;; disable bold/italic change them to 'normal'
       (bold               'bold)
@@ -107,7 +107,7 @@
    ;; general
    `(cursor ((t (:background ,masked-gold))))
    `(default ((t (:foreground ,masked-fg :background ,masked-bg))))
-   `(fringe ((t (:foreground ,masked-fg :background ,masked-bg+00))))
+   `(fringe ((t (:foreground ,masked-fg :background ,masked-dim-black+1))))
    `(minibuffer-prompt ((t (:foreground ,masked-white))))
    `(region ((t (:foreground ,masked-white :background ,masked-blue-alt))))
    `(link ((t (:foreground ,masked-magenta-alt :underline t))))
@@ -122,8 +122,9 @@
                                             :weight ,bold))))
 
    ;; mode-line
-   `(mode-line-active ((t (:foreground ,masked-black :background ,masked-yellow :slant ,italic))))
-   `(mode-line-inactive ((t (:foreground ,masked-fg-1 :background ,masked-bg+01 :slant ,italic))))
+   `(mode-line ((t (:foreground ,masked-white :background ,masked-dim-black :slant ,italic))))
+   `(mode-line-active ((t (:foreground ,masked-white :background ,masked-dim-black :slant ,italic))))
+   `(mode-line-inactive ((t (:foreground ,masked-fg-1 :background ,masked-dim-black+1 :slant ,italic))))
    `(mode-line-buffer-id ((t (:slant ,italic))))
 
    ;; org
