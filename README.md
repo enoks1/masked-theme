@@ -5,7 +5,6 @@ Masked color theme for GNU Emacs.
 
 **Font**: *Berkeley Mono*
 
-With `whitespace-mode` and `highlight-numbers-mode` enabled:
 ![Alt text](/screenshot.png "Screenshot")
 
 # Installation
