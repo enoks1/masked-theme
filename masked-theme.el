@@ -45,23 +45,22 @@
 
       (masked-red          "#a34443")
       (masked-green        "#8ba446")
-      (masked-yellow       "#987d3e")
+      (masked-yellow       "goldenrod")
       (masked-blue         "#496f94")
       (masked-magenta      "#897399")
       (masked-cyan         "#518a8a")
 
-      (masked-fg           "#999999")
-      (masked-fg-1         "#969696")
-      (masked-fg-2         "#696969")
+      (masked-fg           "gray70")
+      (masked-fg-1         "gray60")
+      (masked-fg-2         "gray50")
 
       (masked-blue-alt     "#004daa")
       (masked-magenta-alt  "#c617e6")
 
-      (masked-gold         "#ffd700")
-      (masked-black        "#000000")
-      (masked-white        "#ffffff")
+      (masked-black        "black")
+      (masked-white        "white")
 
-      ;; disable bold/italic change them to 'normal'
+      ;; to disable bold/italic change these to 'normal'
       (bold               'bold)
       (italic             'italic))
 
@@ -69,12 +68,16 @@
    'masked
 
    ;; ansi-term / vterm
-   `(term-color-black ((t (:foreground ,masked-black :background ,masked-black))))
+   `(term-color-black ((t ( :foreground ,masked-black
+                            :background ,masked-black ))))
    `(term-color-red ((t (:foreground ,masked-red :background ,masked-red))))
-   `(term-color-green ((t (:foreground ,masked-green :background ,masked-green))))
+   `(term-color-green ((t ( :foreground ,masked-green
+                            :background ,masked-green ))))
    `(term-color-blue ((t (:foreground ,masked-blue :background ,masked-blue))))
-   `(term-color-yellow ((t (:foreground ,masked-yellow :background ,masked-yellow))))
-   `(term-color-magenta ((t (:foreground ,masked-magenta :background ,masked-magenta))))
+   `(term-color-yellow ((t ( :foreground ,masked-yellow
+                             :background ,masked-yellow ))))
+   `(term-color-magenta ((t ( :foreground ,masked-magenta
+                              :background ,masked-magenta ))))
    `(term-color-cyan ((t (:foreground ,masked-cyan :background ,masked-cyan))))
    `(term-color-white ((t (:foreground ,masked-fg :background ,masked-fg))))
 
@@ -91,8 +94,9 @@
 
    ;; font-lock
    `(font-lock-builtin-face ((t (:foreground ,masked-green))))
-   `(font-lock-comment-face ((t (:foreground ,masked-blue :slant ,italic))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,masked-blue :slant ,italic))))
+   `(font-lock-comment-face ((t (:foreground "#ffe4b5" :slant ,italic))))
+   `(font-lock-comment-delimiter-face ((t ( :foreground "#fff8dc"
+                                            :slant ,italic ))))
    `(font-lock-constant-face ((t (:foreground ,masked-cyan))))
    `(font-lock-doc-face ((t (:foreground ,masked-green))))
    `(font-lock-function-name-face ((t (:foreground ,masked-fg))))
@@ -105,7 +109,7 @@
    `(font-lock-negation-char-face ((t (:foreground ,masked-red))))
 
    ;; general
-   `(cursor ((t (:background ,masked-gold))))
+   `(cursor ((t (:background ,masked-white))))
    `(default ((t (:foreground ,masked-fg :background ,masked-bg))))
    `(fringe ((t (:foreground ,masked-fg :background ,masked-dim-black+1))))
    `(minibuffer-prompt ((t (:foreground ,masked-white))))
@@ -117,15 +121,25 @@
    `(highlight-numbers-number ((t (:foreground ,masked-red))))
 
    ;; line-numbers
-   `(line-number ((t (:inherit default :foreground ,masked-bg+1 :background ,masked-bg-alt))))
-   `(line-number-current-line ((t (:inherit line-number :foreground ,masked-bg+2 :background ,masked-bg-alt
-                                            :weight ,bold))))
+   `(line-number ((t ( :inherit default
+                       :foreground ,masked-bg+1
+                       :background ,masked-bg-alt ))))
+   `(line-number-current-line ((t ( :inherit line-number
+                                    :foreground ,masked-bg+2
+                                    :background ,masked-bg-alt
+                                    :weight ,bold ))))
 
    ;; mode-line
-   `(mode-line ((t (:foreground ,masked-white :background ,masked-dim-black :slant ,italic))))
-   `(mode-line-active ((t (:foreground ,masked-white :background ,masked-dim-black :slant ,italic))))
-   `(mode-line-inactive ((t (:foreground ,masked-fg-1 :background ,masked-dim-black+1 :slant ,italic))))
-   `(mode-line-buffer-id ((t (:slant ,italic))))
+   `(mode-line ((t ( :foreground ,masked-white
+                     :background ,masked-dim-black
+                     :slant ,italic ))))
+   `(mode-line-active ((t ( :foreground ,masked-white
+                            :background ,masked-dim-black
+                            :slant ,italic ))))
+   `(mode-line-inactive ((t ( :foreground ,masked-fg-1
+                              :background ,masked-dim-black+1
+                              :slant ,italic ))))
+   `(mode-line-buffer-id ((t (:slant ,italic ))))
 
    ;; org
    `(org-date ((t (:foreground ,masked-blue :background ,masked-bg))))
@@ -142,12 +156,18 @@
    `(org-level-7 ((t (:foreground ,masked-bg+3 :background ,masked-bg))))
 
    ;; powerline
-   `(powerline-active0 ((t (:foreground ,masked-white  :background ,masked-bg+1))))
-   `(powerline-active1 ((t (:foreground ,masked-white :background ,masked-bg-alt))))
-   `(powerline-active2 ((t (:foreground ,masked-white :background ,masked-bg-alt))))
-   `(powerline-inactive0 ((t (:foreground ,masked-fg-1  :background ,masked-bg-alt))))
-   `(powerline-inactive1 ((t (:foreground ,masked-fg-1 :background ,masked-bg-alt))))
-   `(powerline-inactive2 ((t (:foreground ,masked-fg-1 :background ,masked-bg-alt))))
+   `(powerline-active0 ((t ( :foreground ,masked-white
+                             :background ,masked-bg+1 ))))
+   `(powerline-active1 ((t ( :foreground ,masked-white
+                             :background ,masked-bg-alt ))))
+   `(powerline-active2 ((t ( :foreground ,masked-white
+                             :background ,masked-bg-alt ))))
+   `(powerline-inactive0 ((t ( :foreground ,masked-fg-1
+                               :background ,masked-bg-alt ))))
+   `(powerline-inactive1 ((t ( :foreground ,masked-fg-1
+                               :background ,masked-bg-alt ))))
+   `(powerline-inactive2 ((t ( :foreground ,masked-fg-1
+                               :background ,masked-bg-alt ))))
 
    ;; whitespace
    `(whitespace-space ((t (:foreground ,masked-ws :background ,masked-bg ))))
