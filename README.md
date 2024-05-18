@@ -3,7 +3,7 @@ Masked color theme for GNU Emacs.
 
 # Screenshots
 
-**Font**: *Iosevka-16.5*
+**Font**: *Berkeley Mono*
 
 With `whitespace-mode` and `highlight-numbers-mode` enabled:
 ![Alt text](/screenshot.png "Screenshot")
