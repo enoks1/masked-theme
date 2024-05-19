@@ -110,7 +110,8 @@
                                             :slant
                                             ,italic ))))
    `(font-lock-constant-face ((t (:foreground ,masked-cyan))))
-   `(font-lock-doc-face ((t (:foreground ,masked-cyan))))
+   `(font-lock-doc-face ((t (:foreground ,masked-cream-1))))
+   `(font-lock-doc-markup-face ((t (:foreground ,masked-cream))))
    `(font-lock-function-name-face ((t (:foreground ,masked-fg))))
    `(font-lock-keyword-face ((t (:foreground ,masked-yellow :weight ,bold))))
    `(font-lock-preprocessor-face ((t (:foreground ,masked-magenta))))
