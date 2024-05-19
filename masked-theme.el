@@ -33,43 +33,52 @@
   "Masked theme for GNU Emacs")
 
 ;; colors with `+c' are lighter; and with `-c' darker
-(let ((masked-bg+3         "#41417b")
-      (masked-bg+2         "#2f2f4d")
-      (masked-bg+1         "#222238")
-      (masked-dim-black    "#0f0f10")
-      (masked-dim-black+1  "#121212")
-      (masked-bg           "#000010")
-      (masked-bg-alt       "#0e0e0e")
+(let* ((masked-bg+3                "#41417b")
+       (masked-bg+2                "#2f2f4d")
+       (masked-bg+1                "#222238")
 
-      (masked-ws           "#121212")
+       (masked-bg                  "#000010")
+       (masked-bg-alt              "#0e0e0e")
 
-      (masked-red          "#a34443")
-      (masked-green        "#8ba446")
-      (masked-yellow       "goldenrod")
-      (masked-blue         "#496f94")
-      (masked-magenta      "#897399")
-      (masked-cyan         "#518a8a")
+       (masked-fg                  "gray70")
+       (masked-fg-1                "gray60")
+       (masked-fg-2                "gray50")
 
-      (masked-fg           "gray70")
-      (masked-fg-1         "gray60")
-      (masked-fg-2         "gray50")
+       (masked-red                 "#a34443")
+       (masked-green               "#8ba446")
+       (masked-blue                "#496f94")
+       (masked-magenta             "#897399")
+       (masked-cyan                "#518a8a")
+       (masked-yellow              "goldenrod")
 
-      (masked-blue-alt     "#004daa")
-      (masked-magenta-alt  "#c617e6")
+       (masked-blue-alt            "#004daa")
+       (masked-magenta-alt         "#c617e6")
 
-      (masked-black        "black")
-      (masked-white        "white")
+       (masked-dim-black+1         "#121212")
+       (masked-dim-black           "#0f0f10")
 
-      ;; to disable bold/italic change these to 'normal'
-      (bold               'bold)
-      (italic             'italic))
+       (masked-cream               "tan1")
+       (masked-cream-1             "tan3")
+
+       (masked-beam                "cornsilk")
+       (masked-beam-1              "moccasin")
+
+       (masked-comment-delim       masked-beam)
+       (masked-comment             masked-beam-1)
+
+       (masked-comment-delim-alt   masked-cream)
+       (masked-comment-alt         masked-cream-1)
+
+       ;; to disable bold/italic change these to 'normal'
+       (bold               'bold)
+       (italic             'italic))
 
   (custom-theme-set-faces
    'masked
 
    ;; ansi-term / vterm
-   `(term-color-black ((t ( :foreground ,masked-black
-                            :background ,masked-black ))))
+   `(term-color-black ((t ( :foreground ,masked-dim-black+1
+                            :background ,masked-dim-black+1 ))))
    `(term-color-red ((t (:foreground ,masked-red :background ,masked-red))))
    `(term-color-green ((t ( :foreground ,masked-green
                             :background ,masked-green ))))
@@ -94,11 +103,14 @@
 
    ;; font-lock
    `(font-lock-builtin-face ((t (:foreground ,masked-green))))
-   `(font-lock-comment-face ((t (:foreground "#ffe4b5" :slant ,italic))))
-   `(font-lock-comment-delimiter-face ((t ( :foreground "#fff8dc"
-                                            :slant ,italic ))))
+   `(font-lock-comment-face ((t ( :foreground ,masked-comment-alt
+                                  :slant ,italic ))))
+   `(font-lock-comment-delimiter-face ((t ( :foreground
+                                            ,masked-comment-delim-alt
+                                            :slant
+                                            ,italic ))))
    `(font-lock-constant-face ((t (:foreground ,masked-cyan))))
-   `(font-lock-doc-face ((t (:foreground ,masked-green))))
+   `(font-lock-doc-face ((t (:foreground ,masked-cyan))))
    `(font-lock-function-name-face ((t (:foreground ,masked-fg))))
    `(font-lock-keyword-face ((t (:foreground ,masked-yellow :weight ,bold))))
    `(font-lock-preprocessor-face ((t (:foreground ,masked-magenta))))
@@ -109,11 +121,11 @@
    `(font-lock-negation-char-face ((t (:foreground ,masked-red))))
 
    ;; general
-   `(cursor ((t (:background ,masked-white))))
+   `(cursor ((t (:background ,masked-beam))))
    `(default ((t (:foreground ,masked-fg :background ,masked-bg))))
    `(fringe ((t (:foreground ,masked-fg :background ,masked-dim-black+1))))
-   `(minibuffer-prompt ((t (:foreground ,masked-white))))
-   `(region ((t (:foreground ,masked-white :background ,masked-blue-alt))))
+   `(minibuffer-prompt ((t (:foreground ,masked-beam))))
+   `(region ((t (:foreground ,masked-beam :background ,masked-blue-alt))))
    `(link ((t (:foreground ,masked-magenta-alt :underline t))))
    `(link-visited ((t (:foreground ,masked-magenta :underline t))))
 
@@ -130,10 +142,10 @@
                                     :weight ,bold ))))
 
    ;; mode-line
-   `(mode-line ((t ( :foreground ,masked-white
+   `(mode-line ((t ( :foreground ,masked-beam
                      :background ,masked-dim-black
                      :slant ,italic ))))
-   `(mode-line-active ((t ( :foreground ,masked-white
+   `(mode-line-active ((t ( :foreground ,masked-beam
                             :background ,masked-dim-black
                             :slant ,italic ))))
    `(mode-line-inactive ((t ( :foreground ,masked-fg-1
@@ -156,11 +168,11 @@
    `(org-level-7 ((t (:foreground ,masked-bg+3 :background ,masked-bg))))
 
    ;; powerline
-   `(powerline-active0 ((t ( :foreground ,masked-white
+   `(powerline-active0 ((t ( :foreground ,masked-beam
                              :background ,masked-bg+1 ))))
-   `(powerline-active1 ((t ( :foreground ,masked-white
+   `(powerline-active1 ((t ( :foreground ,masked-beam
                              :background ,masked-bg-alt ))))
-   `(powerline-active2 ((t ( :foreground ,masked-white
+   `(powerline-active2 ((t ( :foreground ,masked-beam
                              :background ,masked-bg-alt ))))
    `(powerline-inactive0 ((t ( :foreground ,masked-fg-1
                                :background ,masked-bg-alt ))))
@@ -170,8 +182,10 @@
                                :background ,masked-bg-alt ))))
 
    ;; whitespace
-   `(whitespace-space ((t (:foreground ,masked-ws :background ,masked-bg ))))
-   `(whitespace-tab ((t (:foreground ,masked-ws :background ,masked-bg ))))))
+   `(whitespace-space ((t ( :foreground ,masked-dim-black+1
+                            :background ,masked-bg ))))
+   `(whitespace-tab ((t ( :foreground ,masked-dim-black+1
+                          :background ,masked-bg ))))))
 
 ;;;###autoload
 (when load-file-name
