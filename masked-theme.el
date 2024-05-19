@@ -127,8 +127,13 @@
    `(fringe ((t (:foreground ,masked-fg :background ,masked-dim-black+1))))
    `(minibuffer-prompt ((t (:foreground ,masked-beam))))
    `(region ((t (:foreground ,masked-beam :background ,masked-blue-alt))))
+   `(fill-column-indicator ((t ( :foreground ,masked-bg+1
+                                 :background ,masked-bg ))))
    `(link ((t (:foreground ,masked-magenta-alt :underline t))))
    `(link-visited ((t (:foreground ,masked-magenta :underline t))))
+
+   ;; highlight-indentation
+   `(highlight-indentation-face ((t (:background ,masked-bg+1))))
 
    ;; highlight-numbers
    `(highlight-numbers-number ((t (:foreground ,masked-red))))
