@@ -63,8 +63,8 @@
        (masked-beam                "cornsilk")
        (masked-beam-1              "moccasin")
 
-       (masked-sea                 "turquoise1")
-       (masked-sea-1               "turquoise3")
+       (masked-sea                 "light slate gray")
+       (masked-sea-1               "dark slate gray")
 
        (masked-comment-delim       masked-sea)
        (masked-comment             masked-sea-1)
