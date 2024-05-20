@@ -63,8 +63,11 @@
        (masked-beam                "cornsilk")
        (masked-beam-1              "moccasin")
 
-       (masked-comment-delim       masked-beam)
-       (masked-comment             masked-beam-1)
+       (masked-sea                 "turquoise1")
+       (masked-sea-1               "turquoise3")
+
+       (masked-comment-delim       masked-sea)
+       (masked-comment             masked-sea-1)
 
        (masked-comment-delim-alt   masked-cream)
        (masked-comment-alt         masked-cream-1)
@@ -103,10 +106,10 @@
 
    ;; font-lock
    `(font-lock-builtin-face ((t (:foreground ,masked-green))))
-   `(font-lock-comment-face ((t ( :foreground ,masked-comment-alt
+   `(font-lock-comment-face ((t ( :foreground ,masked-comment
                                   :slant ,italic ))))
    `(font-lock-comment-delimiter-face ((t ( :foreground
-                                            ,masked-comment-delim-alt
+                                            ,masked-comment-delim
                                             :slant
                                             ,italic ))))
    `(font-lock-constant-face ((t (:foreground ,masked-cyan))))
@@ -129,6 +132,8 @@
    `(region ((t (:foreground ,masked-beam :background ,masked-blue-alt))))
    `(fill-column-indicator ((t ( :foreground ,masked-bg+1
                                  :background ,masked-bg ))))
+   `(show-paren-match ((t ( :foreground ,masked-beam
+			    :background ,masked-blue-alt ))))
    `(link ((t (:foreground ,masked-magenta-alt :underline t))))
    `(link-visited ((t (:foreground ,masked-magenta :underline t))))
 
