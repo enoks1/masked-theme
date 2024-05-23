@@ -57,20 +57,13 @@
        (masked-dim-black+1         "#121212")
        (masked-dim-black           "#0f0f10")
 
-       (masked-cream               "tan1")
-       (masked-cream-1             "tan3")
-
        (masked-beam                "cornsilk")
-       (masked-beam-1              "moccasin")
 
        (masked-sea                 "light slate gray")
        (masked-sea-1               "dark slate gray")
 
-       (masked-comment-delim       masked-sea)
+       (masked-comment-delim       masked-sea-1)
        (masked-comment             masked-sea-1)
-
-       (masked-comment-delim-alt   masked-cream)
-       (masked-comment-alt         masked-cream-1)
 
        ;; to disable bold/italic change these to 'normal'
        (bold               'bold)
@@ -113,8 +106,8 @@
                                             :slant
                                             ,italic ))))
    `(font-lock-constant-face ((t (:foreground ,masked-cyan))))
-   `(font-lock-doc-face ((t (:foreground ,masked-cream-1))))
-   `(font-lock-doc-markup-face ((t (:foreground ,masked-cream))))
+   `(font-lock-doc-face ((t (:foreground ,masked-sea-1))))
+   `(font-lock-doc-markup-face ((t (:foreground ,masked-sea))))
    `(font-lock-function-name-face ((t (:foreground ,masked-fg))))
    `(font-lock-keyword-face ((t (:foreground ,masked-yellow :weight ,bold))))
    `(font-lock-preprocessor-face ((t (:foreground ,masked-magenta))))
@@ -154,15 +147,12 @@
 
    ;; mode-line
    `(mode-line ((t ( :foreground ,masked-beam
-                     :background ,masked-dim-black
-                     :slant ,italic ))))
+                     :background ,masked-dim-black ))))
    `(mode-line-active ((t ( :foreground ,masked-beam
-                            :background ,masked-dim-black
-                            :slant ,italic ))))
+                            :background ,masked-dim-black ))))
    `(mode-line-inactive ((t ( :foreground ,masked-fg-1
-                              :background ,masked-dim-black+1
-                              :slant ,italic ))))
-   `(mode-line-buffer-id ((t (:slant ,italic ))))
+                              :background ,masked-dim-black+1 ))))
+   `(mode-line-buffer-id ((t (:weight ,bold))))
 
    ;; org
    `(org-date ((t (:foreground ,masked-blue :background ,masked-bg))))
