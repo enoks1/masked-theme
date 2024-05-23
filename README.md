@@ -3,7 +3,7 @@ Masked color theme for GNU Emacs.
 
 # Screenshots
 
-**Font**: *Berkeley Mono*
+**Font**: *Berkeley Mono-26*
 
 ![Alt text](/screenshot.png "Screenshot")
 
